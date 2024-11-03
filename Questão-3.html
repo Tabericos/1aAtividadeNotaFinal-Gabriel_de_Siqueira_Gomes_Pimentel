@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="Questão-3, Gabriel_de_Siqueira">
+    <title>Questão-3</title>
+	<style>
+	  body {
+	    background-color: #79ffd6;
+		text-align: center;
+		font-family: Lucida Console;
+        padding: 0;
+        margin: 0;
+	  }
+	  .maindiv {
+	    margin: 10% 0 10% 0;
+		padding: 0.5%;
+		background-color: #f7f7f7;
+		box-shadow: 0 0 15px 10px #0000005a;
+	  }
+	  h1 {
+	    font-size: 2.5em;
+	  }
+	  label {
+	    font-weight: bold;
+	  }
+	  .fiel1 {
+	    margin: 10px;
+		padding: 0.5% 250px 0.5% 5px;
+		border-radius: 20px;
+		border: 5px solid #79ffd6;
+	  }
+	  .fiel2 {
+	    margin: 10px;
+		padding-top: 0.5%;
+		padding-left: 5px;
+		padding-bottom: 0.5%;
+		border-radius: 20px;
+		border: 5px solid #79ffd6;
+	  }
+	  .sub {
+	    margin: 10px;
+		padding: 10px 20px 10px 20px;
+		font-weight: bold;
+		border-radius: 20px;
+		background-color: #79ffd6;
+	  }
+	  footer {
+	    position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	  }
+	</style>
+  </head>
+  <body>
+	<main>
+	  <div class="maindiv">
+	    <h1>Formulário de contato</h1>
+		<div>
+		  <label for="name">Nome:</label><br>
+		  <input type="text" class="fiel1" id="name" name="name" placeholder="Nome" required>
+		  <br><br>
+		  <label for="email">E-mail:</label><br>
+		  <input type="email" class="fiel1" id="email" name="email" placeholder="E-mail" pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9]+\.[a-z]{2,}$" required>
+		  <br><br>
+		  <label for="message">Mensagem:</label><br>
+		  <textarea type="text" class="fiel2" id="message" name="message" placeholder="Mensagem" rows="5" cols="55" required></textarea>
+		  <br><br>
+		  <input type="submit" class="sub" value="enviar" onclick="validar()">
+		  <p id="tested"></p>
+		</div>
+	  </div>
+	</main>
+	<footer>
+	  <p>Gabriel de Siqueira Gomes Pimentel | Matrícula: 202408193661</p>
+	</footer>
+  </body>
+  <script>
+    function validar() {
+      let errorconter = 0;
+	  let name = document.getElementById("name").value;
+	  let email = document.getElementById("email").value;
+	  let message = document.getElementById("message").value;
+	  if (name == "") {
+	    errorconter++;
+	  }
+	  
+	  etest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	  if (!etest.test(email)) {
+	    errorconter++;
+	  }
+	  
+	  if (message == "") {
+	    errorconter++;
+	  }
+	  if (errorconter == 0) {
+	    document.getElementById("tested").innerHTML = "Formulário validado!";
+		document.getElementById("tested").style.color = "#00ff00";
+	    return false;
+	  } else {
+	    document.getElementById("tested").innerHTML = "Falha ao validar o formulário!";
+		document.getElementById("tested").style.color = "#ff0000";
+	    return false;
+	  }
+    }
+	function Limpar() {
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('message').value = "";
+    }
+    window.onload = Limpar();
+  </script>
+</html>
