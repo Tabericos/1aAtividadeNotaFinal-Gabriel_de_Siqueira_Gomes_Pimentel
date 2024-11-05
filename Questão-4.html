@@ -3,62 +3,62 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="Questão-4, Gabriel_de_Siqueira">
+    <meta name="keywords" content="Questão-4, Gabriel_de_Siqueira">
     <title>Questão-4</title>
-	<style>
-	 body {
-	   background-color: #f2ffec;
-	   background-image: linear-gradient(#35ab00 10%, #f2ffec 50%);
-	   background-repeat: no-repeat;
-	   background-size: cover;
-       background-attachment: fixed;
-	   text-align: center;
-	   font-family: Verdana;
-       padding: 0;
-       margin: 0;
-	 }
-	 .calculadora {
-	   background-color: #f3f3f3;
-	   width: 30%;
-	   margin: 10% auto;
-	   padding-bottom: 5px;
-	   border-radius: 10px;
-	   box-shadow: 0 0 15px 10px #0000005a;
-	 }
-	 .head {
-	   background-color: #58ff0b;
-	   margin-top: 20px;
-	   margin-bottom: 50px;
-	   border-radius: 5px;
-	   padding: 10px;
-	 }
-	 input {
-	   margin: 20px;
-	   height: 50px;
-       width: 150px;
-	   border: 2px solid #000000;
-	   text-align: center;
-	   font-size: 160%;
-	   font-weight: bold;
-	 }
-	 button {
-	   padding: 10px;
-	   font-weight: bold;
-	   background-color: #58ff0b;
-	 }
-	 button:hover {
-	   background-color: #3fb20a;
-	   cursor: pointer;
-	 }
-	 #Calculado {
-	  font-weight: bold;
-	  font-size: 160%;
-	 }
-	 .footer {
-	   margin-top: 40px;
-	   margin: 20px;
-	 }
-	</style>
+    <style>
+      body {
+        background-color: #f2ffec;
+	background-image: linear-gradient(#35ab00 10%, #f2ffec 50%);
+	background-repeat: no-repeat;
+	background-size: cover;
+        background-attachment: fixed;
+	text-align: center;
+	font-family: Verdana;
+        padding: 0;
+        margin: 0;
+       }
+       .calculadora {
+         background-color: #f3f3f3;
+	 width: 30%;
+	 margin: 10% auto;
+	 padding-bottom: 5px;
+	 border-radius: 10px;
+	 box-shadow: 0 0 15px 10px #0000005a;
+       }
+       .head {
+         background-color: #58ff0b;
+	 margin-top: 20px;
+	 margin-bottom: 50px;
+	 border-radius: 5px;
+	 padding: 10px;
+       }
+       input {
+         margin: 20px;
+	 height: 50px;
+         width: 150px;
+	 border: 2px solid #000000;
+	 text-align: center;
+	 font-size: 160%;
+	 font-weight: bold;
+       }
+       button {
+         padding: 10px;
+	 font-weight: bold;
+	 background-color: #58ff0b;
+       }
+       button:hover {
+         background-color: #3fb20a;
+	 cursor: pointer;
+       }
+       #Calculado {
+         font-weight: bold;
+	 font-size: 160%;
+       }
+       .footer {
+         margin-top: 40px;
+	 margin: 20px;
+       }
+     </style>
   </head>
   <body>
 	<div class="calculadora">
@@ -81,20 +81,20 @@
   <script>
     function calcular() {
       let massa = parseFloat(document.getElementById("massa").value);
-	  let altura = parseFloat(document.getElementById("altura").value);
+      let altura = parseFloat(document.getElementById("altura").value);
 	  
-	  let result = massa / (altura * altura);
-	  result = result.toFixed(2);
-	  if (isNaN(result)) {
-	    document.getElementById("Calculado").innerHTML = "falha ao calcular IMC";
-	  } else {
-	    document.getElementById("Calculado").innerHTML = result;
-	  }
-	}
+      let result = massa / (altura * altura);
+      result = result.toFixed(2);
+      if (isNaN(result)) {
+        document.getElementById("Calculado").innerHTML = "falha ao calcular IMC";
+      } else {
+        document.getElementById("Calculado").innerHTML = result;
+      }
+    }
 	
-	function Zerar() {
-    document.getElementById('massa').value = "0";
-    document.getElementById('altura').value = "0";
+    function Zerar() {
+      document.getElementById('massa').value = "0";
+      document.getElementById('altura').value = "0";
     }
     window.onload = Zerar();
   </script>
