@@ -17,6 +17,8 @@
 	    margin: 10% 0 10% 0;
 		padding: 0.5%;
 		background-color: #f7f7f7;
+		background-image: radial-gradient(#f7f7f7 70%, #4f4f4f);
+		background-repeat: no-repeat;
 		box-shadow: 0 0 15px 10px #0000005a;
 	  }
 	  h1 {
@@ -63,7 +65,7 @@
 		  <input type="text" class="fiel1" id="name" name="name" placeholder="Nome" required>
 		  <br><br>
 		  <label for="email">E-mail:</label><br>
-		  <input type="email" class="fiel1" id="email" name="email" placeholder="E-mail" pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9]+\.[a-z]{2,}$" required>
+		  <input type="email" class="fiel1" id="email" name="email" placeholder="E-mail" required>
 		  <br><br>
 		  <label for="message">Mensagem:</label><br>
 		  <textarea type="text" class="fiel2" id="message" name="message" placeholder="Mensagem" rows="5" cols="55" required></textarea>
@@ -87,7 +89,7 @@
 	    errorconter++;
 	  }
 	  
-	  etest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	  etest = /^[^\@]+@[^\@]+\.[^\@]+$/;
 	  if (!etest.test(email)) {
 	    errorconter++;
 	  }
